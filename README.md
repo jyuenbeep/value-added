@@ -1,3 +1,3 @@
-# jyuen30
+# Jasmine Yuen
 ## Workshop
 ### SoftDev 2022-2023
