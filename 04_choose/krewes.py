@@ -1,9 +1,9 @@
 """
 Jasmine Yuen
 SoftDev
-K<nn> -- <Title/Topic/Summary... (Aim for concision, brevity, CLARITY. Write to your future self...)>
+K04 -- Python program to randomly select an element from a dictionary
 2022-09-22
-time spent: <elapsed time in hours, rounded to nearest tenth>
+time spent: 0.5
 """
 
 import random
@@ -14,8 +14,7 @@ krewes = {
     8 : ["devo1", "devo2", "devo3"]
 }
 
-rrow = random.choice(krewes.keys())
-#rcol = random.randrange(len(krewes[rrow]))
+rrow = random.choice(list(krewes.keys()))
+rcol = random.choice(krewes[rrow])
 
-print(rrow)
-#print(rcol)
+print(f"{rrow} : {rcol}")
