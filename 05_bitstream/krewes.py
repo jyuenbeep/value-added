@@ -2,18 +2,19 @@ import random
 
 krewes = {}
 
-with open('test.txt') as f:
-    s = f.readlines()
+# with open('test.txt') as f:
+#     s = f.readlines()
+
+s = "2$$$jasmine$$$duck@@@2$$$jeffrey$$$ducky@@@8$$$daniel$$$bob"
     
 ary = s.split("@@@")
 
-for i in len(ary):
+for i in range(len(ary)):
     ary[i] = ary[i].split("$$$")
     period = ary[i][0]
-    #retreiving the period from the subarray
-    krewes[period] = ary[i][1]:ary[i][2]
+    krewes[period].update({ary[i][1]:ary[i][2]})
 
-rrow = random.choice(list(krewes.keys()))
-rcol = random.choice(krewes[rrow])
+# rrow = (list(krewes.keys()))
+# print(f"{rrow} : {rcol}")
 
-print(f"{rrow} : {rcol}")
+print(krewes)
