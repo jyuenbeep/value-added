@@ -6,7 +6,7 @@ krewes = {}
 #     s = f.readlines()
 
 s = "2$$$jasmine$$$duck@@@2$$$jeffrey$$$ducky@@@8$$$daniel$$$bob"
-    
+
 ary = s.split("@@@")
 
 for i in range(len(ary)):
