@@ -18,7 +18,7 @@ for i in range(len(ary)):
 for i in ary:
     krewes[i[0]].append([i[1], i[2]])
 
-# rrow = (list(krewes.keys()))
-# print(f"{rrow} : {rcol}")
+rrow = random.choice(list(krewes.keys()))
+rcol = random.choice(krewes[rrow])
 
-print(krewes)
+print(f"{rrow} : {rcol}")
