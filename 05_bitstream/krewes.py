@@ -2,10 +2,9 @@ import random
 
 krewes = {}
 
-# with open('test.txt') as f:
-#     s = f.readlines()
-
-s = "2$$$jasmine$$$duck@@@2$$$jeffrey$$$ducky@@@8$$$daniel$$$bob"
+f = open("test.txt", "r")
+s = f.read()
+f.close()
 
 ary = s.split("@@@")
 
