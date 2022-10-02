@@ -1,3 +1,26 @@
+"""
+Jasmine Yuen & Jeffrey Zou (Temporary Ducks)
+SoftDev
+K06 -- py-csv
+Read a list of occupations and the percentages of their occurences from a .csv file.
+(Read it into a dictionary)
+Then return a random occupation based on the randomness weight indicated by its percentage.
+2022-09-30
+time spent: 1
+
+DISCO: Learned how to read .csv files.
+QCC: NONE
+
+PROCESS:
+1. import necessary libaries (csv, random)
+2. initialize the dictionary and the keys it contains (the column names of the .csv file)
+3. open and read the .csv file as a .DictReader object
+4. while reading it, transfer contents into the dictionary
+5. make sure the percentages are converted to floats before being addeed
+6. return a random occupation by using random.choice(), which employs weighted randomness
+7. test to see if it is actually weighted randomness
+"""
+
 import csv
 import random
 
@@ -8,6 +31,7 @@ jobDict["Percentage"] = []
 
 # opening .csv file and reading it as a .DictReader object
 # adding the job class and percentage to their appropriate slots in the dictionary
+# .DictReader documentation --- https://docs.python.org/3/library/csv.html
 with open('occupations.csv') as f:
     r =  csv.DictReader(f)
     for row in r:
@@ -19,7 +43,8 @@ with open('occupations.csv') as f:
 
 # TESTING
 ### print(jobDict)
-### random.choices(jobDict["Job Class"], jobDict["Percentage"])
+### return (random.choices(jobDict["Job Class"], jobDict["Percentage"]))
+### random.choices() --- https://www.w3schools.com/python/ref_random_choices.asp
 
 # TEST CASES
 
