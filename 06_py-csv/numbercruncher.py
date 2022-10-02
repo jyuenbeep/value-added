@@ -10,8 +10,10 @@ jobDict["Percentage"] = []
 with open('occupations.csv') as f:
     r =  csv.DictReader(f)
     for row in r:
-        jobDict["Job Class"].append(row['Job Class'])
-        jobDict["Percentage"].append(row['Percentage'])
+        # making sure the total percentage is not accounted for
+        if (row['Job Class']!="Total"):
+            jobDict["Job Class"].append(row['Job Class'])
+            jobDict["Percentage"].append(row['Percentage'])
 
 # testing
 print(jobDict)
