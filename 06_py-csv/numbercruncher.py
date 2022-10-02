@@ -17,7 +17,21 @@ with open('occupations.csv') as f:
             # making sure the percentage is a float, not a string
             jobDict["Percentage"].append(float(row['Percentage']))
 
-# testing
+# TESTING
 ### print(jobDict)
+### random.choices(jobDict["Job Class"], jobDict["Percentage"])
 
-print(random.choices(jobDict["Job Class"], jobDict["Percentage"]))
+# TEST CASES
+
+### TESTING RANGE OF ERROR
+ary = []
+times = 1000
+for num in range(times):
+    ary+=(random.choices(jobDict["Job Class"], jobDict["Percentage"]))
+
+for i in range(len(jobDict['Job Class'])):
+    job = jobDict['Job Class'][i]
+    apercent = jobDict['Percentage'][i]
+    cpercent = (ary.count(job)/times)*100
+    print(job + ": " + str(cpercent) + "%")
+    print("ACTUAL: " + str(apercent) + "% " + "DIFFERENCE: " + str(apercent-cpercent) + "\n")
