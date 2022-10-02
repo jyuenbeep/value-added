@@ -1,4 +1,5 @@
 import csv
+import random
 
 # initializing dictionary + keys
 jobDict = {}
@@ -13,7 +14,10 @@ with open('occupations.csv') as f:
         # making sure the total percentage is not accounted for
         if (row['Job Class']!="Total"):
             jobDict["Job Class"].append(row['Job Class'])
-            jobDict["Percentage"].append(row['Percentage'])
+            # making sure the percentage is a float, not a string
+            jobDict["Percentage"].append(float(row['Percentage']))
 
 # testing
-print(jobDict)
+### print(jobDict)
+
+print(random.choices(jobDict["Job Class"], jobDict["Percentage"]))
