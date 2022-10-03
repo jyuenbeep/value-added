@@ -15,7 +15,7 @@ app.run()  # Q5: Where have you seen similar constructs in other languages?
 '''
 DISCO:
 QCC:
-0.
+0. Python.
 1. It's in the link.
 2. This prints to the terminal --- " Serving Flask app 'app' ".
 3. This prints the name of the Flask app, which is by default the name of the file
