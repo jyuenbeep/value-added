@@ -1,8 +1,13 @@
 10/3
 
 VIRTUAL ENVIRONMENT
+---
+install packages
+do NOT install in repo or make a repo
 
 ~
 $ python3 -m venv <HERO>
-$ cd hero
+$ cd <HERO>
 $ . bin/activate
+$ pip install flask
+$ deactivate
