@@ -1,0 +1,8 @@
+10/3
+
+VIRTUAL ENVIRONMENT
+
+~
+$ python3 -m venv <HERO>
+$ cd hero
+$ . bin/activate
