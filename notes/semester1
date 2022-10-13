@@ -11,3 +11,16 @@ $ cd <HERO>
 $ . bin/activate
 $ pip install flask
 $ deactivate
+
+10/13
+
+HOW THE WEBSERVER WORKS:
+
+person -> https -> APACHE2
+
+in apache2:
+~/jyuen30 (your user)
+- this is too much work to spin up a whole server for every project you do
+
+you want to spin up a server whenever you want - that is where flask comes in:
+- flask app lives behind apache
