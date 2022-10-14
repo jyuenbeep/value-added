@@ -30,4 +30,4 @@ you want to spin up a server whenever you want - that is where flask comes in:
 HTML FORMS (BACKEND):
 - prebuilt input types 
 - cgi-bin (common gateway interface) -> if apache was served files in it, it would run them
-
+- flask more streamlined than cgi-bin; already has all the apparatuses needed
