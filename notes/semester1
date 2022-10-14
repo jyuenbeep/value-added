@@ -24,3 +24,10 @@ in apache2:
 
 you want to spin up a server whenever you want - that is where flask comes in:
 - flask app lives behind apache
+
+10/14
+
+HTML FORMS (BACKEND):
+- prebuilt input types 
+- cgi-bin (common gateway interface) -> if apache was served files in it, it would run them
+
