@@ -18,7 +18,7 @@ app = Flask(__name__)    #create Flask object
 trioTASK:
 ~~~~~~~~~~~ BEFORE RUNNING THIS, ~~~~~~~~~~~~~~~~~~
 ...read for understanding all of the code below.
-Some will work as written; other sections will not. 
+Some will work as written; other sections will not.
 TASK: Predict which...
 Devise some simple tests you can run to "take apart this engine," as it were.
 Execute your tests.
@@ -32,38 +32,36 @@ PROTIP: Insert your own in-line comments
 
 @app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.args)
-    # print("***DIAG: request.args['username']  ***")
-    # print(request.args['username'])
-    print("***DIAG: request.headers ***")
-    print(request.headers)
+    # print("\n\n\n")
+    # print("***DIAG: this Flask obj ***")
+    # print(app)
+    # print("***DIAG: request obj ***")
+    # print(request)
+    # print("***DIAG: request.args ***")
+    # print(request.args)
+    # # print("***DIAG: request.args['username']  ***")
+    # # print(request.args['username'])
+    # print("***DIAG: request.headers ***")
+    # print(request.headers)
     return render_template( 'login.html' )
 
 
 @app.route("/auth", methods=['GET', 'POST'])
 def authenticate():
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.args)
-    print("***DIAG: request.args['username']  ***")
-    print(request.args['username'])
-    print("***DIAG: request.headers ***")
-    print(request.headers)
-    return render_template('response.html')  #response to a form submission
+    # print("\n\n\n")
+    # print("***DIAG: this Flask obj ***")
+    # print(app)
+    # print("***DIAG: request obj ***")
+    # print(request)
+    # print("***DIAG: request.args ***")
+    # print(request.args)
+    # print("***DIAG: request.args['username']  ***")
+    # print(request.args['username'])
+    # print("***DIAG: request.headers ***")
+    # print(request.headers)
+    return render_template('response.html', name=request.form['username'])  #response to a form submission
 
-
-    
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
-    app.debug = True 
+    app.debug = True
     app.run()
