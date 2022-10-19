@@ -1,6 +1,8 @@
 .sheet {
   font-family: sans-serif, Arial;
   background-color: #767676;
+  margin-bottom: 75px;
+  
 }
 .sheet > h1{
     background-color: #bebebe;
@@ -11,6 +13,7 @@
 .sheet > #hor {
   display: flex;
   flex-direction: row;
+  
 }
 .sheet > #hor > div > ul {
   list-style: none;
@@ -22,9 +25,14 @@
 .sheet > div > #navbar{
   margin-right: 300px;
 }
-.sheet > #copyright {
+#copyright {
   text-align: right;
   background-color: #565656;
   color: #76736a;
   padding: 7px;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  right:0;
+  height: 50px;
 }
