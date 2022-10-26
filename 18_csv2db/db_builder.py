@@ -68,7 +68,7 @@ c.execute(createCourses)    # run SQL statement
 c.execute(createStudents)
 
 for i in range(len(students)):
-    c.execute("INSERT INTO students VALUES (students['name'][{i}], students['age'][{i}], students['id'][{i}]);")
+    c.execute(f"INSERT INTO students VALUES (students['name'][{i}], students['age'][{i}], students['id'][{i}]);")
 
 for i in range(len(courses)):
     c.execute(f"INSERT INTO students VALUES (courses['code'][{i}], courses['mark'][{i}], courses['id'][{i}]);")
