@@ -13,18 +13,27 @@ from flask import session
 
 app = Flask(__name__)  
 
+username = "ziying"
+password = "john"
 
+def authenticate(user, passw):
+    return (user == username and passw == password)
 
 @app.route("/", methods=['GET', 'POST'])
 def disp_loginpage():
-    if request.method == 'POST':
-        if authenticate(request.form['username'],
-                        request.form['password']):
-
+    return render_template( 'login.html' )
 
 @app.route("/login", methods=['GET', 'POST'])
-def authenticate():
-    
+def response_template(): 
+    if authenticate(request.args['username'], request.args['password']):
+        return render_template('response.html', um="this works")  
+    return render_template('response.html', um="this doesn't work")  
+
+# @app.route('/logout')
+# def logout():
+#     # remove the username from the session if it's there
+#     session.pop('username', None)
+#     return redirect(url_for('index'))
 
 if __name__ == "__main__": 
     app.debug = True
