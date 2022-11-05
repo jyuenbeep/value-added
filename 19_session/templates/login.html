@@ -8,18 +8,36 @@
 
   <body>
     <h1>
-      Welcome, Travelers of the Intertoobz!
+      Welcome, Travelers of the Intertoobz! This is BLUE HAIRED GALS WITH PRONOUNS presenting a very functional website!
     </h1>
-
     <h3>
-      Enter your username below to proceed.
+      Talia Hsia, Ziying Jian, Jasmine Yuen
+    </h3>
+    <h2>
+      REGISTER HERE:
+    </h2>
+    <h2>
+      {% if session.name %}
+         You are logged in. {{ session.name }} <a href="/logout">logout</a>.
+      {% else %}
+         You are not logged in. Please log in.
+      {% endif %}
+    </h2>
+    <h3>
+      Username:
     </h3>
     <form action="/login">
       <input type="text" name="username">
+    <br>
+    <h3>
+      Password:
+    </h3>
       <input type="text" name="password">
       <input type="submit" name="sub1">
     </form>
     <br>
+
+    {{errorLogin}}
   </body>
 
 </html>
