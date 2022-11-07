@@ -51,6 +51,7 @@ def logout():
     session.pop('username', None)
     return render_template('login.html', loginMSG="Logged out")
 
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
