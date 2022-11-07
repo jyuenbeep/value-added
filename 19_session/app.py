@@ -33,23 +33,26 @@ def disp_loginpage():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     #authenticate login info from form using "request.args"
-    if authenticate(request.args['username'], request.args['password']):
-        #establishes a session
-        session['username'] = request.args['username']
-        #bring to new page
-        return render_template('response.html', functional="WORKS!", username=session['username'])
-    #error messages
-    else:
-        if username != request.args['username']:
-            return render_template('login.html', loginMSG="Bad username.")
-        return render_template('login.html', loginMSG="Bad password.")
+    if request.method=="POST": 
+        if authenticate(request.form['username'], request.form['password']):
+            #establishes a session
+            session['username'] = request.form['username']
+            #session['username'] = request.args['username']
+            #bring to new page
+            return render_template('response.html', functional="WORKS!", username=session['username'])
+            #error messages
+        else:
+            if username != request.form['username']:
+                return render_template('login.html', loginMSG="Bad username.")
+            return render_template('login.html', loginMSG="Bad password.")
 
 
-@app.route('/logout')
+@app.route('/logout', methods=['POST'])
 def logout():
     # remove the username from the session if it's there
-    session.pop('username', None)
-    return render_template('login.html', loginMSG="Logged out")
+    if request.method == "POST":
+        session.pop('username', None)
+        return render_template('login.html', loginMSG="Logged out")
 
 
 if __name__ == "__main__":
