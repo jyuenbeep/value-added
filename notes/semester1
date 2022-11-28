@@ -31,3 +31,25 @@ HTML FORMS (BACKEND):
 - prebuilt input types 
 - cgi-bin (common gateway interface) -> if apache was served files in it, it would run them
 - flask more streamlined than cgi-bin; already has all the apparatuses needed
+
+11/28
+
+FRONTEND FRAMEWORKS:
+
+terms:
+- content delivery network (CDN): server
+
+examples:
+- bootstrap
+- tailwind
+- foundation
+
+pros:
+- adopt a framework and strap it onto your frontend
+- makes your life easier
+
+cons:
+- your site might look like everyone else's
+- limited set of tools
+- you will be downloading all the components, but not even using all of it ---
+  takes a longer time for the user to download
