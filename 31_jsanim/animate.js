@@ -4,7 +4,7 @@ var stopButton = document.getElementById("buttonStop"); // GET STOP BUTTON
 
 var ctx = c.getContext("2d");
 
-ctx.fillStyle = "black";
+ctx.fillStyle = "#3EB489";
 
 var requestID = "stop"; //init global var for use with animation frames
 
