@@ -17,28 +17,22 @@ var growing = true;
 
 var drawDot = () => {
     requestID = "dot";
-    if (radius >= 250) {
-        growing = false;
-    }
-    if (radius <= 0) {
-        growing = true; 
-    }
-
     clear();
+    ctx.beginPath();
+    ctx.arc(250, 250, radius, 0, 2 * Math.PI);
+    ctx.fill();
     if (growing) {
-        ctx.beginPath();
-        ctx.arc(250, 250, radius, 0, 2 * Math.PI);
-        ctx.fill();
-        radius = radius+10;
-        window.requestAnimationFrame(drawDot);
+        if (radius < 250) {
+            radius = radius+1;
+        }
+        else { growing = false; }
     } else {
-        ctx.beginPath();
-        ctx.arc(250, 250, radius, 0, 2 * Math.PI);
-        ctx.fill();
-        radius = radius-10;
-        window.requestAnimationFrame(drawDot);
+        if (radius > 0) {
+            radius = radius-1;
+        }
+        else { growing = true; }
     }
-
+    window.requestAnimationFrame(drawDot);
     /* 
         Wipe the canvas, 
         Repaint the circle,
@@ -53,9 +47,12 @@ var drawDot = () => {
 
 //var stopIt = function() {
 var stopIt = () => {
-    console.log("stopIt invoked...");
-    console.log(requestID);
-    //window.cancelAnimationFrame()
+    requestID = "stop";
+    if (requestID=="stop") {
+        console.log("stopIt invoked...");
+        console.log(requestID);
+        window.cancelAnimationFrame(drawDot);
+    }
 }
 
 dotButton.addEventListener("click", drawDot);
