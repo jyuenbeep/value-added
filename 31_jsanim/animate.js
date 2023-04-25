@@ -13,10 +13,9 @@ var clear = (e) => {
 };
 
 var radius = 0;
-var growing = true; 
+var growing = true;
 
 var drawDot = () => {
-    requestID = "dot";
     clear();
     ctx.beginPath();
     ctx.arc(250, 250, radius, 0, 2 * Math.PI);
