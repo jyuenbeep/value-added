@@ -16,6 +16,7 @@ var radius = 0;
 var growing = true;
 
 var drawDot = () => {
+    window.cancelAnimationFrame(requestID);
     clear();
     ctx.beginPath();
     ctx.arc(250, 250, radius, 0, 2 * Math.PI);
