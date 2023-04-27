@@ -15,6 +15,7 @@ var clear = (e) => {
 var dvdLogoSetup = function() {
     window.cancelAnimationFrame(requestID);
 
+    //initializing size...
     var rectWidth = 60;
     var rectHeight = 40;
 
@@ -22,34 +23,43 @@ var dvdLogoSetup = function() {
     var rectX = Math.random()*(c.width-rectWidth);
     var rectY = Math.random()*(c.height-rectHeight);
 
+    //image as object
     var logo = new Image();
     logo.src = "logo_dvd.jpg";
 
+    //randomizing direction
     var xPosneg = Math.pow(-1, Math.floor(Math.random()*3));
     var yPosneg = Math.pow(-1, Math.floor(Math.random()*3));
 
+    //setting velocity (-/+) * 2 (manually set speed)
     var xVel = 2*xPosneg;
     var yVel = 2*yPosneg;
 
+    //function within a function
     var dvdLogo = function() {
         clear();
         ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
+        //bouncing
         if (rectX < 0 || rectX > c.width - rectWidth) {
             xVel = -xVel;
         }
         if (rectY < 0 || rectY > c.height - rectHeight) {
             yVel = -yVel;
         }
+        //make it move
         rectX += xVel;
         rectY += yVel;
+        //animate!!!
         requestID = window.requestAnimationFrame(dvdLogo);
     }
+    //calling the function within a function
     dvdLogo();
  };
         
 var radius = 0;
 var growing = true;
  
+//same as 31...
 var drawDot = () => {
     window.cancelAnimationFrame(requestID);
     clear();
